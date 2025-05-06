@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.11-slim
 
 # Install miniconda
 RUN apt-get update && \
@@ -10,7 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Add conda to path
-ENV PATH=/opt/conda/bin:$PATH
+ENV PATH /opt/conda/bin:$PATH
 
 # Copy environment.yml
 COPY environment.yml /app/environment.yml
@@ -21,7 +21,7 @@ RUN conda env create -f /app/environment.yml
 # Set up conda environment activation
 SHELL ["/bin/bash", "-c"]
 RUN echo "source activate mcp-authentication" > ~/.bashrc
-ENV PATH=/opt/conda/envs/mcp-authentication/bin:$PATH
+ENV PATH /opt/conda/envs/mcp-authentication/bin:$PATH
 
 # Set working directory
 WORKDIR /app
@@ -41,3 +41,4 @@ EXPOSE 3005
 
 # Run the application
 CMD ["conda", "run", "--no-capture-output", "-n", "mcp-authentication", "python", "/app/src/server.py"] 
+​
