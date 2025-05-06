@@ -1,0 +1,24 @@
+# conda env create --file environment.yml
+
+# Update:
+# conda activate tool-server
+# conda env update --file environment.yml --prune
+
+# Environment name
+name: mcp-authentication
+
+# Dependencies and packages
+dependencies:
+
+  - python=3.13
+  - pip
+  - fastapi
+  - python-dotenv
+  - pydantic
+
+  - pip:
+    - mcp
+    - mcp[cli]
+    - starlette
+    - uvicorn
+    - requests
