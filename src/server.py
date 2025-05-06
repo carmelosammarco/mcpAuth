@@ -10,7 +10,7 @@ from starlette.routing import Mount
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from starlette.responses import JSONResponse
-from src.user_db import validate_api_key, get_user_by_api_key
+from user_db import validate_api_key, get_user_by_api_key
 
 
 class APIKeyMiddleware(BaseHTTPMiddleware):
