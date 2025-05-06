@@ -40,5 +40,4 @@ RUN /opt/conda/envs/mcp-authentication/bin/pip install mcp mcp[cli] starlette uv
 EXPOSE 3005
 
 # Run the application
-CMD ["conda", "run", "--no-capture-output", "-n", "mcp-authentication", "python", "/app/src/server.py"] 
-​
+CMD ["conda", "run", "--no-capture-output", "-n", "mcp-authentication", "python", "/app/src/server.py"]
