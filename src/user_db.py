@@ -9,7 +9,7 @@ from typing import Dict, Optional
 # Simple user database with API keys
 users = {
     "user": {
-        "api_key": "password123",
+        "api_key": "123456789",
         "full_name": "User Test",
         "role": "admin"
     }
